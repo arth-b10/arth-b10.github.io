@@ -3,22 +3,22 @@ $(function(){
 	var $write;
 	$('#keyboard').hide();
 
-	$('#writeL').click(function(){
+	$('#writeL').on("tap",function(){
 		$('#keyboard').show();
 		return $write = $('#writeL');
 	});
 
-	$('#writeM').click(function(){
+	$('#writeM').on("tap",function(){
 		$('#keyboard').show();
 		return $write = $('#writeM');
 	});
 
-	$('#writeR').click(function(){
+	$('#writeR').on("tap",function(){
 		$('#keyboard').show();
 		return $write = $('#writeR');
 	});
 	
-	$('#keyboard li').click(function(){
+	$('#keyboard li').on("tap",function(){
 		var $this = $(this),
 			character = $this.html(); // If it's a lowercase letter, nothing happens to this variable
 		
