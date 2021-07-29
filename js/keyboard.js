@@ -1,6 +1,7 @@
 $(function(){
 
-	var $write = $('#writeL');
+	var $write;
+	$('#keyboard').hide();
 
 	$('#writeL').click(function(){
 		$('#keyboard').show();
