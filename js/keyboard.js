@@ -1,19 +1,20 @@
 $(function(){
 
 	var $write;
+	$('#keyboard').hide();
 
-	$('#writeL').click(function(e){
-		e.preventDefault();
+	$('#writeL').click(function(){
+		$('#keyboard').show();
 		return $write = $('#writeL');
 	});
 
-	$('#writeM').click(function(e){
-		e.preventDefault();
+	$('#writeM').click(function(){
+		$('#keyboard').show();
 		return $write = $('#writeM');
 	});
 
-	$('#writeR').click(function(e){
-		e.preventDefault();
+	$('#writeR').click(function(){
+		$('#keyboard').show();
 		return $write = $('#writeR');
 	});
 	
@@ -29,8 +30,12 @@ $(function(){
 			return false;
 		}
 		
-		// Special characters
-		if ($this.hasClass('return')) character = "\n";
+		// Enter
+		if ($this.hasClass('returnL') || $this.hasClass('returnR')) {
+
+			$('#keyboard').hide();
+			return false;
+		}
 		
 		// Add the character
 		$write.html($write.html() + character);
