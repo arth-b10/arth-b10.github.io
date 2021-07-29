@@ -73,7 +73,7 @@ list-style: none;
     height: 50px;
     }
                 
-    #keyboard li:hover {
+    #keyboard li:active {
     position: relative;
     top: 1px;
     left: 1px;
