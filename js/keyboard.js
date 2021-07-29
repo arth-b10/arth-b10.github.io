@@ -1,24 +1,28 @@
 $(function(){
-	var $write = $('#write'),
-		shift = false,
-		capslock = false;
+
+	var $write;
+
+	$('#writeL').click(function(e){
+		e.preventDefault();
+		return $write = $('#writeL');
+	});
+
+	$('#writeM').click(function(e){
+		e.preventDefault();
+		return $write = $('#writeM');
+	});
+
+	$('#writeR').click(function(e){
+		e.preventDefault();
+		return $write = $('#writeR');
+	});
 	
 	$('#keyboard li').click(function(){
 		var $this = $(this),
 			character = $this.html(); // If it's a lowercase letter, nothing happens to this variable
 		
-		// Shift keys
-		if ($this.hasClass('left-shift') || $this.hasClass('right-shift')) {
-			$('.letter').toggleClass('uppercase');
-			$('.symbol span').toggle();
-			
-			shift = (shift === true) ? false : true;
-			capslock = false;
-			return false;
-		}
-		
 		// Delete
-		if ($this.hasClass('delete')) {
+		if ($this.hasClass('deleteL') || $this.hasClass('deleteR')) {
 			var html = $write.html();
 			
 			$write.html(html.substr(0, html.length - 1));
