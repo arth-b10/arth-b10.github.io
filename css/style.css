@@ -28,6 +28,7 @@ background: #eee;
 
 #Keyboard{
     float:  right;
+    touch-action: manipulation;
 }
 
 #W{
