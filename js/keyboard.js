@@ -42,7 +42,8 @@ $(function(){
 	});*/
 
 	$(document).on("touchend", function(e){
-
+		
+		e.preventDefault();
 		var clickedItem = e.target.id;
 		var character;
 
@@ -52,9 +53,9 @@ $(function(){
           character="";
         break;
       case "Return":
-          var html = $write.html();
-		  $write.html(html.substr(0, html.length - 1));
-		  character="";
+	  var html = $write.html();
+	  $write.html(html.substr(0, html.length - 1));
+	  character="";
         break;
       case "A":
           character = "A";
