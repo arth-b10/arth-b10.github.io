@@ -32,14 +32,17 @@ $(function(){
 		e.preventDefault();
 		e.target
 	});*/
-	$('.key').on("touchmove click", onDocumentTouchMove);
+	$('.key').on("touchmove", onDocumentTouchMove);
 	
 	$('.key').on("touchend", function(e){
 		e.preventDefault();
 		
     		var elem = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
 		var character;
-		var clickedItem = elem.id
+		var clickedItem = elem.id;
+		if(clickedItem === null){
+			clickedItem = e.target.id;
+		};
 		
 		switch (clickedItem) {
       case "Enter":
