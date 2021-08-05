@@ -1,4 +1,8 @@
 $(function(){
+	
+	document.ontouchmove = function(e){
+    		e.preventDefault();
+	};
 
 	var $write;
 	$('#Keyboard').hide();
