@@ -45,8 +45,8 @@ $(function(){
 		
 		e.preventDefault();
 		var clickedItem = e.target.id;
-		/*var character;
-		
+		var character;
+		/*
 		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
     		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
 		
