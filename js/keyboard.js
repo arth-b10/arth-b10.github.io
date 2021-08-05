@@ -32,9 +32,9 @@ $(function(){
 		e.preventDefault();
 		e.target
 	});*/
-	$('#Keyboard').on("touchmove", onDocumentTouchMove);
+	$('.key').on("touchmove", onDocumentTouchMove);
 	
-	$('#Keyboard').on("touchend", function(e){
+	$('.key').on("touchend", function(e){
 		e.preventDefault();
 		
     		var elem = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
