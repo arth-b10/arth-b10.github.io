@@ -1,6 +1,7 @@
 $(function(){
 	
 	function onDocumentTouchMove(e){
+		e.preventDefault();
 		onDocumentTouchMove.x = e.touches[e.touches.length - 1].clientX;
     		onDocumentTouchMove.y = e.touches[e.touches.length - 1].clientY;
 	}
