@@ -1,23 +1,34 @@
+function onDocumentTouchMove(e){
+	onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
+    onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
+}
+
+function onDocumentTouchEnd(e){
+	e.preventDefault();
+    var elem = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
+    $write.html($write.html() + elem.id);
+}
+
 $(function(){
-	
+
 	document.ontouchmove = function(e){
-    		e.preventDefault();
-	};
+    	e.preventDefault();
+	}
 
 	var $write;
 	$('#Keyboard').hide();
 
-	$('#writeL').on("touchend",function(){
+	$('#writeL').click(function(){
 		$('#Keyboard').show();
 		return $write = $('#writeL');
 	});
 
-	$('#writeM').on("touchend",function(){
+	$('#writeM').click(function(){
 		$('#Keyboard').show();
 		return $write = $('#writeM');
 	});
 
-	$('#writeR').on("touchend",function(){
+	$('#writeR').click(function(){
 		$('#Keyboard').show();
 		return $write = $('#writeR');
 	});
@@ -27,13 +38,11 @@ $(function(){
 		e.target
 
 
-	});
-
-	$(document).on("touchmove", function(e){
-		e.preventDefault();
-
-
 	});*/
+
+	$(document).on("touchmove", onDocumentTouchMove, false);
+
+	$(document).on("touchend", onDocumentTouchEnd, false);
 /*
 	document
 	.getElementById("Enter")
@@ -41,17 +50,14 @@ $(function(){
 		$write.html($write.html() + "Enter");
 	});*/
 
-	$(document).on("touchend", function(e){
-		
+	/*$(document).on("touchend", function(e){
 		e.preventDefault();
-		var clickedItem = e.target.id;
+
+		//var clickedItem = e.target.id;
 		var character;
-		/*
-		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
-    		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
-		
-   		var elem = $(document).elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
-		var clickedItem = elem.id;*/
+
+		var elem = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
+    	var clickedItem = elem.id;
 
 		switch (clickedItem) {
       case "Enter":
@@ -59,9 +65,9 @@ $(function(){
           character="";
         break;
       case "Return":
-	  var html = $write.html();
-	  $write.html(html.substr(0, html.length - 1));
-	  character="";
+          var html = $write.html();
+		  $write.html(html.substr(0, html.length - 1));
+		  character="";
         break;
       case "A":
           character = "A";
@@ -146,7 +152,7 @@ $(function(){
        }
 
        $write.html($write.html() + character);
-	});
+	});*/
 	
 	/*
 	$('#keyboard div').click(function(){
