@@ -38,7 +38,6 @@ $(function(){
 	});*/
 
 	$(document).on("touchend", function(e){
-		e.preventDefault();
 
 		var clickedItem = e.target.id;
 		var character;
