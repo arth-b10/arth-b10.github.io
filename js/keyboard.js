@@ -135,7 +135,7 @@ $(function(){
       default:
        	  character = "";
        }
-   		$write.html($write.html() + character);
+   		$write.html($write.html() + clickedItem);
 	});
 /*
 	document
