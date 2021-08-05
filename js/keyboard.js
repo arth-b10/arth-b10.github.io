@@ -18,7 +18,7 @@ $(function(){
 		return $write = $('#writeR');
 	});
 
-	$(document).on("touchstart", function(e){
+	/*$(document).on("touchstart", function(e){
 		e.preventDefault();
 		e.target
 
@@ -29,7 +29,7 @@ $(function(){
 		e.preventDefault();
 
 
-	});
+	});*/
 /*
 	document
 	.getElementById("Enter")
