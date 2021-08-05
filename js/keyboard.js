@@ -47,11 +47,10 @@ $(function(){
 		//var clickedItem = e.target.id;
 		var character;
 
-		onDocumentTouchMove.x = event.changedTouches[event.changedTouches.length - 1].clientX;
-    		onDocumentTouchMove.y = event.changedTouches[event.changedTouches.length - 1].clientY;
+		var onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
+    		var onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
 
-    		event.preventDefault();
-    		var elem = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
+    		var elem = $(document).elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
     		var clickedItem = elem.id;
 
 		switch (clickedItem) {
