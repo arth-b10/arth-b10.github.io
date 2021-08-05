@@ -7,17 +7,17 @@ $(function(){
 	var $write;
 	$('#Keyboard').hide();
 
-	$('#writeL').click(function(){
+	$('#writeL').on("tap",function(){
 		$('#Keyboard').show();
 		return $write = $('#writeL');
 	});
 
-	$('#writeM').click(function(){
+	$('#writeM').on("tap",function(){
 		$('#Keyboard').show();
 		return $write = $('#writeM');
 	});
 
-	$('#writeR').click(function(){
+	$('#writeR').on("tap",function(){
 		$('#Keyboard').show();
 		return $write = $('#writeR');
 	});
