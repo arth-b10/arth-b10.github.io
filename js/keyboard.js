@@ -1,8 +1,8 @@
 $(function(){
 	
 	function onDocumentTouchMove(e){
-		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
-    		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
+		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length].clientX;
+    		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length].clientY;
 	}
 	/*
 	function onDocumentTouchEnd(e){
