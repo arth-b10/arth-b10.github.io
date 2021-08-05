@@ -140,7 +140,7 @@ $(function(){
        }
 
        $write.html($write.html() + character);
-	});
+	}, false);
 	
 	/*
 	$('#keyboard div').click(function(){
