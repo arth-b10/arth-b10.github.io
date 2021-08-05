@@ -1,73 +1,50 @@
 $(function(){
 	
-	function onDocumentTouchMove(e){
-		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
-    		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
-	}
-
-	function onDocumentTouchEnd(e){
-		e.preventDefault();
-    		var elem = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
-    		$write.html($write.html() + elem.id);
-	}
-
 	document.ontouchmove = function(e){
-    	e.preventDefault();
-	}
-
+    		e.preventDefault();
+	};
 	var $write;
 	$('#Keyboard').hide();
-
-	$('#writeL').click(function(){
+	$('#writeL').on("touchend",function(){
 		$('#Keyboard').show();
 		return $write = $('#writeL');
 	});
-
-	$('#writeM').click(function(){
+	$('#writeM').on("touchend",function(){
 		$('#Keyboard').show();
 		return $write = $('#writeM');
 	});
-
-	$('#writeR').click(function(){
+	$('#writeR').on("touchend",function(){
 		$('#Keyboard').show();
 		return $write = $('#writeR');
 	});
-
 	/*$(document).on("touchstart", function(e){
 		e.preventDefault();
 		e.target
-
-
+	});
+	$(document).on("touchmove", function(e){
+		e.preventDefault();
 	});*/
-
-	$(document).on("touchmove", onDocumentTouchMove, false);
-
-	$(document).on("touchend", onDocumentTouchEnd, false);
 /*
 	document
 	.getElementById("Enter")
 	.addEventListener("click", function(){
 		$write.html($write.html() + "Enter");
 	});*/
+	$(document).on("touchend", function(e){
 
-	/*$(document).on("touchend", function(e){
-		e.preventDefault();
-
-		//var clickedItem = e.target.id;
-		var character;
-
-		var elem = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
-    	var clickedItem = elem.id;
-
+ 		e.preventDefault();
+ 		var clickedItem = e.target.id;
+ 		var character;
+ 
 		switch (clickedItem) {
       case "Enter":
           $('#Keyboard').hide();
           character="";
         break;
       case "Return":
-          var html = $write.html();
-		  $write.html(html.substr(0, html.length - 1));
-		  character="";
+	  var html = $write.html();
+	  $write.html(html.substr(0, html.length - 1));
+	  character="";
         break;
       case "A":
           character = "A";
@@ -150,31 +127,6 @@ $(function(){
       default:
        	  character = "";
        }
-
        $write.html($write.html() + character);
-	});*/
-	
-	/*
-	$('#keyboard div').click(function(){
-		var $this = $(this),
-			character = $this.html(); // If it's a lowercase letter, nothing happens to this variable
-		
-		// Delete
-		if ($this.hasClass('deleteL') || $this.hasClass('deleteR')) {
-			var html = $write.html();
-			
-			$write.html(html.substr(0, html.length - 1));
-			return false;
-		}
-		
-		// Enter
-		if ($this.hasClass('returnL') || $this.hasClass('returnR')) {
-
-			$('#keyboard').hide();
-			return false;
-		}
-		
-		// Add the character
-		$write.html($write.html() + character);
-	});*/
+	});
 });
