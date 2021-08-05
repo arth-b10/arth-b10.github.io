@@ -32,7 +32,7 @@ $(function(){
 		e.preventDefault();
 		e.target
 	});*/
-	$('.key').on("touchmove", onDocumentTouchMove);
+	$('.key').on("touchmove touchend", onDocumentTouchMove);
 	
 	$('.key').on("touchend", function(e){
 		e.preventDefault();
