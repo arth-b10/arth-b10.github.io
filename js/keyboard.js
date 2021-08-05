@@ -1,10 +1,10 @@
 $(function(){
-	/*
+	
 	function onDocumentTouchMove(e){
 		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
     		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
 	}
-
+	/*
 	function onDocumentTouchEnd(e){
 		e.preventDefault();
     		var elem = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
@@ -32,10 +32,7 @@ $(function(){
 		e.preventDefault();
 		e.target
 	});*/
-	$(document).on("touchmove", function(e){
-		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
-    		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
-	});
+	$(document).on("touchmove", onDocumentTouchMove);
 	
 	$(document).on("touchend", function(e){
 		e.preventDefault();
