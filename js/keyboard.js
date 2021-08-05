@@ -1,5 +1,16 @@
 $(function(){
 	
+	function onDocumentTouchMove(e){
+		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
+    		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
+	}
+
+	function onDocumentTouchEnd(e){
+		e.preventDefault();
+    		var elem = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
+   		$write.html($write.html() + elem.id);
+	}
+	
 	document.ontouchmove = function(e){
     		e.preventDefault();
 	};
@@ -20,16 +31,16 @@ $(function(){
 	/*$(document).on("touchstart", function(e){
 		e.preventDefault();
 		e.target
-	});
-	$(document).on("touchmove", function(e){
-		e.preventDefault();
 	});*/
+	$(document).on("touchmove", onDocumentTouchMove);
+	
+	$(document).on("touchend", onDocumentTouchEnd);
 /*
 	document
 	.getElementById("Enter")
 	.addEventListener("click", function(){
 		$write.html($write.html() + "Enter");
-	});*/
+	});
 	$(document).on("touchend", function(e){
 
  		e.preventDefault();
@@ -128,5 +139,5 @@ $(function(){
        	  character = "";
        }
        $write.html($write.html() + character);
-	});
+	});*/
 });
