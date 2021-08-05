@@ -44,14 +44,14 @@ $(function(){
 	$(document).on("touchend", function(e){
 		
 		e.preventDefault();
-		//var clickedItem = e.target.id;
-		var character;
+		var clickedItem = e.target.id;
+		/*var character;
 		
 		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
     		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
 		
    		var elem = $(document).elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
-		var clickedItem = elem.id;
+		var clickedItem = elem.id;*/
 
 		switch (clickedItem) {
       case "Enter":
