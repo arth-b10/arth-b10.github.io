@@ -37,7 +37,13 @@ $(function(){
 
 	$('.key').on("touchmove", function(e){
 		e.preventDefault();
-		movedItem = e.target.id;
+		
+		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
+    		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
+		
+    		var element = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
+		var movedItem = element.id;
+		
 		Identifier = "#"+String(movedItem);
 		if($(Identifier).parent().parent().parent().attr('id') == 'Keyboard' && $(Identifier).hasClass('fond')){
 			$(Identifier).addClass('Touched');
@@ -45,6 +51,13 @@ $(function(){
 				$(lastIdentifier).removeClass('Touched');
 			};
 		};
+		
+		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
+    		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
+		
+    		var lastelement = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
+		var lastItem = lastelement.id;
+		
 		lastItem = e.target.id;
 		lastIdentifier = "#"+String(lastItem);
 	});
