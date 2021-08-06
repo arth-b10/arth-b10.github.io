@@ -33,10 +33,13 @@ $(function(){
 		e.preventDefault();
 		e.target
 	});*/
-	$('.key').on("touchmove", onDocumentTouchMove);
+	/*$('.key').on("touchmove", onDocumentTouchMove);*/
 	
 	$('.key').on("touchend", function(e){
 		e.preventDefault();
+		
+		onDocumentTouchMove.x = e.touches[e.touches.length - 1].clientX;
+    		onDocumentTouchMove.y = e.touches[e.touches.length - 1].clientY;
 		
     		var elem = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
 		var character;
