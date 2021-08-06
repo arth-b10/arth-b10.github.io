@@ -33,7 +33,21 @@ $(function(){
 		e.preventDefault();
 		e.target
 	});*/
-	/*$('.key').on("touchmove", onDocumentTouchMove);*/
+	var lastItem;
+
+	$('.key').on("touchmove", function(e){
+		e.preventDefault();
+		movedItem = e.target.id;
+		Identifier = "#"+String(movedItem);
+		if($(Identifier).parent().parent().parent().attr('id') == 'Keyboard' && $(Identifier).hasClass('fond')){
+			$(Identifier).addClass('Touched');
+			if(lastItem != movedItem){
+				$(lastIdentifier).removeClass('Touched');
+			};
+		};
+		lastItem = e.target.id;
+		lastIdentifier = "#"+String(lastItem);
+	});
 	
 	$('.key').on("touchend", function(e){
 		e.preventDefault();
