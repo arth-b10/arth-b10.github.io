@@ -44,9 +44,6 @@ $(function(){
     		var elem = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
 		var character;
 		var clickedItem = elem.id;
-		if(clickedItem === null){
-			clickedItem = e.target.id;
-		};
 		
 		switch (clickedItem) {
       case "Enter":
