@@ -134,7 +134,7 @@ $(function(){
           character = "Z";
         break;
       default:
-       	  character = "";
+       	  character = "_";
        }
    		$write.html($write.html() + clickedItem);
 	});
