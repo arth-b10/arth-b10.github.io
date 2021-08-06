@@ -136,7 +136,7 @@ $(function(){
       default:
        	  character = "_";
        }
-   		$write.html($write.html() + clickedItem);
+   		$write.html($write.html() + character);
 	});
 /*
 	document
