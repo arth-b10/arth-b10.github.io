@@ -36,30 +36,7 @@ $(function(){
 	var lastItem;
 
 	$('.key').on("touchmove", function(e){
-		e.preventDefault();
-		
-		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
-    		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
-		
-    		var element = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
-		var movedItem = element.id;
-		
-		Identifier = "#"+String(movedItem);
-		if($(Identifier).parent().parent().parent().attr('id') == 'Keyboard' && $(Identifier).hasClass('fond')){
-			$(Identifier).addClass('Touched');
-			if(lastItem != movedItem){
-				$(lastIdentifier).removeClass('Touched');
-			};
-		};
-		
-		onDocumentTouchMove.x = e.changedTouches[e.changedTouches.length - 1].clientX;
-    		onDocumentTouchMove.y = e.changedTouches[e.changedTouches.length - 1].clientY;
-		
-    		var lastelement = document.elementFromPoint(onDocumentTouchMove.x, onDocumentTouchMove.y);
-		var lastItem = lastelement.id;
-		
-		lastItem = e.target.id;
-		lastIdentifier = "#"+String(lastItem);
+		$(body).addClass('Touched');
 	});
 	
 	$('.key').on("touchend", function(e){
