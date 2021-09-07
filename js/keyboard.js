@@ -36,7 +36,7 @@ $(function(){
 	var lastItem;
 
 	$('.key').on("touchmove", function(e){
-		$write.html($write.html() + e.target.id);
+		//$write.html($write.html() + e.target.id);
 	});
 	
 	$('.key').on("touchend", function(e){
